@@ -1,0 +1,20 @@
+<html>
+  <script type="text/javascript">
+    chrome.browserAction.onClicked.addListener(function(tab) {
+      var tabUrl = tab.url;
+      var tabId = tab.id;
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://spedr.com/post");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+          chrome.tabs.update(tabId, {url: xhr.responseText});
+        }
+      }
+
+      var data = new FormData();
+      data.append("url", tabUrl);
+      xhr.send(data);
+    });
+  </script>
+</html>
