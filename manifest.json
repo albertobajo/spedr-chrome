@@ -2,10 +2,10 @@
   "name": "Spedr Url Shortener",
   "version": "1.0",
   "description": "Spedr enables you to create short URLs by clicking an icon in url bar.",
-  "background_page": "background.html",
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "Spedr Url Shortener"
+    "default_title": "Spedr Url Shortener",
+    "popup": "popup.html"
   },
   "icons": { "128": "icon_128.png" },
   "permissions": [
